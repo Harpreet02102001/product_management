@@ -9,6 +9,7 @@ $routes = [
     '/'        => 'controllers/index.php',
     '/login'    => './controllers/login.php',
     '/signup'    => './controllers/signup.php',
+    '/env'    => './env.php',
 
 
 ];

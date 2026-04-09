@@ -55,7 +55,7 @@
                 <!-- Password input -->
                 <div data-mdb-input-init class="form-outline mb-4">
                   <input type="password" id="form3Example4" class="form-control" />
-                  <label class="form-label" for="form3Example4">Password</label>
+                  <label class="form-label" for="form3Example4">Password</label>  
                 </div>
 
                 <!-- confirm Password input -->
