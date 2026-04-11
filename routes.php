@@ -6,10 +6,12 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 // echo "$uri  <br>";
 
 $routes = [
-    '/'        => 'controllers/index.php',
-    '/login'    => './controllers/login.php',
+    '/'          => './views/dashboard-products.php',
+    '/login'     => './controllers/login.php',
     '/signup'    => './controllers/signup.php',
-    '/env'    => './env.php',
+    '/browser'   => './controllers/session.php',
+    '/new_user'   => './controllers/index.php',
+    '/env'       => './env.php',
 
 
 ];

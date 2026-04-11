@@ -1,0 +1,25 @@
+//query to create user tables in mysql
+
+use tedit;
+
+
+create table users ( 
+   id int auto_increment primary key ,
+   name varchar(255),
+   mail varchar(255),
+   role_id int,
+   FOREIGN KEY (role_id)  REFERENCES roles (id),
+   created_at timestamp default current_timestamp,
+   updated_at timestamp default current_timestamp);
+
+	
+    ------------------------------------------------------------
+
+    query to create roles tables in mysql
+
+    Create table roles (
+    id int primary key auto_increment,
+    role varchar(255),
+    created_at timestamp default current_timestamp ,
+    updated_at timestamp default current_timestamp);
+
