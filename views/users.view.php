@@ -9,11 +9,11 @@
 
             <!-- main content ends here -->
             <?php
-                 require "./views/signup.view.php"; 
+                 require "./views/users.table.php"; 
             ?>
         </main>
     </div>
-</div>signup
+</div>
 
 
 

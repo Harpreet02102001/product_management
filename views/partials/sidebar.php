@@ -248,11 +248,11 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2" href="/new_user">
+                            <a class="nav-link d-flex align-items-center gap-2" href="/users">
                                 <svg class="bi" aria-hidden="true">
                                     <use xlink:href="#people"></use>
                                 </svg>
-                                Admin
+                                Admin / Users
                             </a>
                         </li>
                         <li class="nav-item">

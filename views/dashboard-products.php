@@ -3,11 +3,13 @@
 
 
 
+<h1 class="text-center">welcome</h1>
+<!-- 
 <div class="table-responsive small">
                 <table class="table table-striped table-sm">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
+                            <th scope="col">Id</th>
                             <th scope="col">Header</th>
                             <th scope="col">Header</th>
                             <th scope="col">Header</th>
@@ -130,9 +132,6 @@
                         </tr>
                     </tbody>
                 </table>
-            </div>
+            </div> -->
 
-
-<?php
-require "./views/partials/footer.php";
-?>
+            
