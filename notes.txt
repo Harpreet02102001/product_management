@@ -43,3 +43,13 @@ create table users (
 
 
 insert into products ( product ,user_id ) values ('Powder	' , 1);                        
+
+
+   <div data-mdb-input-init class="form-outline mb-4">
+                  <select class="form-select" aria-label="Default select example">
+                    <option selected></option>
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+                  </select>
+                  <label class="form-label" for="form3Example4">Role</label>
+                </div>

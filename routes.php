@@ -11,9 +11,10 @@ $routes = [
     '/signup'            => './controllers/signup.php',
     '/browser'           => './controllers/session.php',
     '/new_user'          => './controllers/index.php',
-    '/users'             => './controllers/users.php',
-    '/products'          => './controllers/products.php',
-    '/products/create'   => './controllers/productsCreate.php',
+    '/users'             => './controllers/users.php',                  //to show users listting
+    '/users/create'      => './controllers/users-create.php',           //to creare new user
+    '/products'          => './controllers/products.php',                //to just show products
+    '/products/create'   => './controllers/productsCreate.php',         // to create new product
     '/env'               => './env.php',
 
 
