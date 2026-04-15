@@ -1,9 +1,7 @@
 
 <?php
-
-
-require "./routes.php";
 require "./Database.php";
+require "./routes.php";
 
 $config = require "./config.php";
 
