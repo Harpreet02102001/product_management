@@ -10,4 +10,4 @@ $products = $db->query('select * from products')->fetchAll();
 // echo "<pre>";
 //     var_dump($products);
 // echo "</pre>";
-require "./views/products.view.php";
+require "./views/productsViews/products.view.php";

@@ -11,4 +11,4 @@ $users = $db->query('select * from users')->fetchAll();
 // var_dump($users);
 // echo"</pre>";
 
-require "./views/users.view.php"  ;
+require "./views/usersViews/users.view.php"  ;

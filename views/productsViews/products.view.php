@@ -8,7 +8,7 @@ require "./views/partials/sidebar.php";
         <h2>Products Table</h2>
         <button class="btn btn-primary m-3"><a class="text-white " href="/products/create">Add Products</a></button>
     </div>
-    <table class="table table-bordered">
+    <table class="table table-bordered text-nowrap tecenter">
         <thead>
             <tr>
                 <th>Sr. No</th>
@@ -21,8 +21,8 @@ require "./views/partials/sidebar.php";
                 <th>HSN</th>
                 <th>Life</th>
                 <th>User_id</th>
-                <th>Create_at</th>
-                <th>Updated_at</th>
+                <!-- <th>Create_at</th>
+                <th>Updated_at</th> -->
                 <th>Actions</th>
             </tr>
         </thead>
@@ -40,8 +40,8 @@ require "./views/partials/sidebar.php";
                 <td> <?= $product['hsnCode'] ?> </td>
                 <td> <?= $product['shelf_life'] ?> </td>
                 <td> <?= $product['user_id'] ?> </td>
-                <td> <?= $product['create_at'] ?> </td>
-                <td> <?= $product['updated_at'] ?> </td>
+                <!-- <td> <?= $product['create_at'] ?> </td> -->
+                <!-- <td> <?= $product['updated_at'] ?> </td> -->
                 <td>
                     <button class="btn btn-warning">Update</button>
                     <button class="btn btn-primary">Delete</button>
