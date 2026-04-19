@@ -30,8 +30,8 @@
                     <div data-mdb-input-init class="form-outline">
                       <label class="form-label" for="form3Example1">Name</label>
                       <input type="text" id="form3Example1" name="name" class="form-control" />
-                      <?php if (isset($error['name'])) : ?>
-                        <span class="text-danger"><?= $error['name'] ?></span>
+                      <?php if (isset($errors['name'])) : ?>
+                        <span class="text-danger"><?= $errors['name'] ?></span>
                       <?php endif; ?>
                     </div>
                   </div>
@@ -39,8 +39,8 @@
                     <div data-mdb-input-init class="form-outline">
                       <label class="form-label" for="form3Example2">Login ID</label>
                       <input type="text" id="form3Example2" name="loginId" class="form-control" />
-                        <?php if (isset($error['loginId'])) : ?>
-                        <span class="text-danger"><?= $error['loginId'] ?></span>
+                        <?php if (isset($errors['loginId'])) : ?>
+                        <span class="text-danger"><?= $errors['loginId'] ?></span>
                       <?php endif; ?>
                     </div>
                   </div>
@@ -50,8 +50,8 @@
                 <div data-mdb-input-init class="form-outline mb-4">
                   <label class="form-label" for="form3Example3">Email address</label>
                   <input type="email" id="form3Example3" name="mail" class="form-control" />
-                  <?php if (isset($error['mail'])) : ?>
-                    <span class="text-danger"><?= $error['mail'] ?></span>
+                  <?php if (isset($errors['mail'])) : ?>
+                    <span class="text-danger"><?= $errors['mail'] ?></span>
                   <?php endif; ?>
                 </div>
                 <!--  -->
@@ -60,8 +60,8 @@
                     <div data-mdb-input-init class="form-outline">
                       <label class="form-label" for="form3Example1">Mobile Number </label>
                       <input type="text" id="form3Example1" name="mobileNo" class="form-control" />
-                       <?php if (isset($error['mobileNo'])) : ?>
-                        <span class="text-danger"><?= $error['mobileNo'] ?></span>
+                       <?php if (isset($errors['mobileNo'])) : ?>
+                        <span class="text-danger"><?= $errors['mobileNo'] ?></span>
                       <?php endif; ?>
                     </div>
                   </div>
@@ -70,14 +70,14 @@
                       <div data-mdb-input-init class="form-outline mb-4">
                         <label class="form-label" for="form3Example2">Department</label>
                         <select class="form-select" name="department" aria-label="Default select example">
-                          <option selected>Select Department</option>
+                          <option disabled>Select Department</option>
                           <option value="sale">Sale</option>
                           <option value="godown">Godown</option>
                           <option value="accounts">Accounts</option>
                           <option value="IT">IT</option>
                         </select>
-                        <?php if (isset($error['department'])) : ?>
-                        <span class="text-danger"><?= $error['department'] ?></span>
+                        <?php if (isset($errors['department'])) : ?>
+                        <span class="text-danger"><?= $errors['department'] ?></span>
                       <?php endif; ?>
                       </div>
                     </div>
@@ -94,8 +94,8 @@
                     <option value="1">Admin</option>
                     <option value="1">User</option>
                   </select>
-                   <?php if (isset($error['role'])) : ?>
-                        <span class="text-danger"><?= $error['role'] ?></span>
+                   <?php if (isset($errors['role'])) : ?>
+                        <span class="text-danger"><?= $errors['role'] ?></span>
                       <?php endif; ?>
                 </div>
 
@@ -103,8 +103,8 @@
                 <div data-mdb-input-init class="form-outline mb-4">
                   <label class="form-label" for="form3Example4">Password</label>
                   <input type="password" name="password" id="form3Example4" class="form-control" />
-                   <?php if (isset($error['password'])) : ?>
-                        <span class="text-danger"><?= $error['password'] ?></span>
+                   <?php if (isset($errors['password'])) : ?>
+                        <span class="text-danger"><?= $errors['password'] ?></span>
                       <?php endif; ?>
                 </div>
 
@@ -115,8 +115,8 @@
                     <option value="active">Active</option>
                     <option value="inactive">Inactive</option>
                   </select>
-                   <?php if (isset($error['status'])) : ?>
-                        <span class="text-danger"><?= $error['status'] ?></span>
+                   <?php if (isset($errors['status'])) : ?>
+                        <span class="text-danger"><?= $errors['status'] ?></span>
                       <?php endif; ?>
                 </div>
 

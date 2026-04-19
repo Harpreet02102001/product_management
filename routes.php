@@ -11,7 +11,7 @@ $routes = [
 
     //routes for users control
     '/users'             => './controllers/usersControllers/users.php',                  //to show users listting
-    '/new_user'      => './controllers/usersControllers/users-create.php',           //to creare new user
+    '/new_user'          => './controllers/usersControllers/users-create.php',           //to creare new user
 
     //routes for users control
     '/products'          => './controllers/productsControllers/products.php',                //to just show products
@@ -19,12 +19,6 @@ $routes = [
 
     //routes fo env files 
     '/env'               => './env.php',
-
-
-    // '/users/create'      => './controllers/usersControllers/users-create.php',           //to creare new user
-    // extra routes
-    // '/new_user'          => './controllers/usersControllers/index.php',
-    // '/new_user'          => './controllers/usersControllers/index.php',
 
 ];
 

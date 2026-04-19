@@ -3,7 +3,7 @@
 
 
 
-<h2><?php $heading  ?></h2>
+<h2><?= $_SESSION['name']; ?> </h2>
 
 
 

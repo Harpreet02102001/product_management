@@ -3,67 +3,90 @@ require 'Validator.php';
 $config = require('config.php');
 $db = new Database($config['database']);
 
-        // echo "<pre>";
-        // var_dump($_POST);
-        // echo "</pre>";
-        //     die();
-        // var_dump($error);exit;
+// echo "<pre>";
+// var_dump($_POST);
+// echo "</pre>";
+// die();
+// var_dump($error);exit;
 
-
-
-
-// insert data into users tables
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $error = [];
-    if (! Validator::name($_POST['name'], 1, 10)) {
-        $error['name'] = 'Enter Valid Name';
+
+    $name = $_POST['name'];
+    $loginId = $_POST['loginId'];
+    $mail = $_POST['mail'];
+    $mobileNo = $_POST['mobileNo'];
+    $department = $_POST['department'];
+    $role = $_POST['role'];
+    $password = $_POST['password'];
+    $status = $_POST['status'];
+
+    $errors = [];
+
+    if (! Validator::name($name)) {
+        $errors['name'] = 'Please provide the valid Name';
     }
-    if(! Validator::mail($_POST['mail'],1, 30 )){
-        $error['mail']  = 'Enter Valid Mail Id';
+    if (! Validator::mail($mail)) {
+        $errors['mail'] = 'Please provide Valid Email Address';
     }
-    if(! Validator::loginId($_POST['loginId'],1,30)){
-        $error['loginId']  = 'Enter Valid Login ID';
+    if (! Validator::role($role)) {
+        $errors['role'] = 'Please provide valid Role';
     }
-    if(! Validator::mobileNo($_POST['mobileNo'],1,10)){
-        $error['mobileNo']  = 'Enter Valid Mobile No';
+    if (! Validator::loginId($loginId, 1, 20)) {
+        $errors['loginId'] = 'Please provide valid log Id';
     }
-    if(! Validator::department($_POST['department'],1,10)){
-        $error['department']  = 'Enter Valid Department';
+    if (! Validator::mobileNo($mobileNo, 1, 10)) {
+        $errors['mobileNo'] = 'Please provide valid Mobile No';
     }
-    if(! Validator::role($_POST['role'],1,10)){
-        $error['role']  = 'Enter Valid role';
+    if (! Validator::department($department)) {
+        $errors['department'] = 'Please provide valid Department';
     }
-    if(! Validator::password($_POST['password'],1,10)){
-        $error['password']  = 'Enter Valid password No';
+    if (! Validator::password($password)) {
+        $errors['password'] = 'Provide Password of at least of Seven Characters';
     }
-    if(! Validator::status($_POST['status'],1,10)){
-        $error['status']  = 'Enter Valid status';
+    if (! Validator::status($status)) {
+        $errors['status'] = 'Please provide valid Status';
     }
 
 
-    if  (empty($error)) {
+    // if(! empty($errors)){
+    //     require './views/usersViews/userCreate.view.php';
+    // }
+
+    // $db  = App::resolve(Database::class);
+    $users = $db->query(
+        'SELECT * FROM users WHERE mail = :mail',
+        [
+            'mail' => $mail
+
+        ]
+    )->fetch();
+
+    if ($users) {
+        header('location:  /');
+    } else {
         $db->query(
             'INSERT INTO users (
-            name,
-            mail,
-            role_id,
-            loginId,
-            mobileNo, 
-            department,
-            password,
-            status
-        ) 
-        VALUES (
-            :name,
-            :mail,
-            :role_id,
-            :loginId,
-            :mobileNo,
-            :department,
-            :password,
-            :status
+           name,
+           mail,
+           role_id,
+           loginId,
+           mobileNo,
+           department,
+           password,
+           status
+       )
+       VALUES (
+           :name,
+           :mail,
+           :role_id,
+           :loginId,
+           :mobileNo,
+           :department,
+           :password,
+           :status
 
-        )',
+
+       )',
             [
                 'name' => $_POST['name'],
                 'mail' => $_POST['mail'],
@@ -75,9 +98,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'status' => $_POST['status'],
             ]
         );
-        header('location: /users');
     }
-}
 
+    // echo "<pre>";
+    // var_dump($users);
+    // echo "</pre>";
+
+
+}
 require "./views/usersViews/userCreate.view.php";
-// require "./views/usersViews/userCreate.view.php";
