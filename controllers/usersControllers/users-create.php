@@ -9,16 +9,16 @@ $db = new Database($config['database']);
 // die();
 // var_dump($error);exit;
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    $name = $_POST['name'];
-    $loginId = $_POST['loginId'];
-    $mail = $_POST['mail'];
-    $mobileNo = $_POST['mobileNo'];
+    $name       = $_POST['name'];
+    $loginId    = $_POST['loginId'];
+    $mail       = $_POST['mail'];
+    $mobileNo   = $_POST['mobileNo'];
     $department = $_POST['department'];
-    $role = $_POST['role'];
-    $password = $_POST['password'];
-    $status = $_POST['status'];
+    $role       = $_POST['role'];
+    $password   = $_POST['password'];
+    $status     = $_POST['status'];
 
     $errors = [];
 
@@ -48,9 +48,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
 
-    // if(! empty($errors)){
-    //     require './views/usersViews/userCreate.view.php';
-    // }
+    if (! empty($errors)) {
+        require './views/usersViews/userCreate.view.php';
+    }
 
     // $db  = App::resolve(Database::class);
     $users = $db->query(
@@ -62,7 +62,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     )->fetch();
 
     if ($users) {
-        header('location:  /');
+        $errors['mail'] = 'Email already exists';
+        require './views/usersViews/userCreate.view.php';
+        exit();
     } else {
         $db->query(
             'INSERT INTO users (
@@ -94,8 +96,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'mobileNo' => $_POST['mobileNo'],
                 'department' => $_POST['department'],
                 'role_id' => $_POST['role'],
-                'password' => $_POST['password'],
-                'status' => $_POST['status'],
+                'password' => password_hash($_POST['password'], PASSWORD_BCRYPT),
+                'status' => $_POST['status'],   
             ]
         );
     }
@@ -104,6 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // var_dump($users);
     // echo "</pre>";
 
-
+    header('Location: /users');
+    exit();
 }
 require "./views/usersViews/userCreate.view.php";

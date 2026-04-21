@@ -12,6 +12,7 @@ $routes = [
     //routes for users control
     '/users'             => './controllers/usersControllers/users.php',                  //to show users listting
     '/new_user'          => './controllers/usersControllers/users-create.php',           //to creare new user
+    '/login'             => './controllers/usersControllers/login-user.php',           //to creare new user
 
     //routes for users control
     '/products'          => './controllers/productsControllers/products.php',                //to just show products

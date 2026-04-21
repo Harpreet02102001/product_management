@@ -78,26 +78,29 @@ class Validator
         return strlen($value) >= $min && strlen($value) <= $max;
     }
     // validation for department 
-    public static function department($value, $min  =1, $max = INF){
+    public static function department($value, $min  = 1, $max = INF)
+    {
         $value = trim($value);
         return strlen($value) >= $min && strlen($value) <= $max;
     }
     // validation for role
-     public static function role($value, $min  =1, $max = INF){
+    public static function role($value, $min  = 1, $max = INF)
+    {
         $value = trim($value);
         return strlen($value) >= $min && strlen($value) <= $max;
     }
     // validation for password
-     public static function password($value, $min  =1, $max = INF){
+    public static function password($value, $min  = 1, $max = INF)
+    {
         $value = trim($value);
         return strlen($value) >= $min && strlen($value) <= $max;
     }
     // validation for status
-     public static function status($value, $min  =1, $max = INF){
+    public static function status($value, $min  = 1, $max = INF)
+    {
         $value = trim($value);
         return strlen($value) >= $min && strlen($value) <= $max;
     }
-
 }
     
 

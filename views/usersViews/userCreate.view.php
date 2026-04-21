@@ -29,7 +29,7 @@
                   <div class="col-md-6 mb-4">
                     <div data-mdb-input-init class="form-outline">
                       <label class="form-label" for="form3Example1">Name</label>
-                      <input type="text" id="form3Example1" name="name" class="form-control" />
+                      <input type="text" id="form3Example1" name="name"  value="<?= $_POST['name'] ?>" class="form-control" />
                       <?php if (isset($errors['name'])) : ?>
                         <span class="text-danger"><?= $errors['name'] ?></span>
                       <?php endif; ?>
@@ -38,7 +38,7 @@
                   <div class="col-md-6 mb-4">
                     <div data-mdb-input-init class="form-outline">
                       <label class="form-label" for="form3Example2">Login ID</label>
-                      <input type="text" id="form3Example2" name="loginId" class="form-control" />
+                      <input type="text" id="form3Example2" name="loginId"  value="<?= $_POST['loginId'] ?>" class="form-control" />
                         <?php if (isset($errors['loginId'])) : ?>
                         <span class="text-danger"><?= $errors['loginId'] ?></span>
                       <?php endif; ?>
@@ -49,7 +49,7 @@
                 <!-- Email input -->
                 <div data-mdb-input-init class="form-outline mb-4">
                   <label class="form-label" for="form3Example3">Email address</label>
-                  <input type="email" id="form3Example3" name="mail" class="form-control" />
+                  <input type="email" id="form3Example3" name="mail" value="<?= $_POST['mail'] ?>" class="form-control" />
                   <?php if (isset($errors['mail'])) : ?>
                     <span class="text-danger"><?= $errors['mail'] ?></span>
                   <?php endif; ?>
@@ -59,7 +59,7 @@
                   <div class="col-md-6 mb-4">
                     <div data-mdb-input-init class="form-outline">
                       <label class="form-label" for="form3Example1">Mobile Number </label>
-                      <input type="text" id="form3Example1" name="mobileNo" class="form-control" />
+                      <input type="text" id="form3Example1" name="mobileNo" value="<?= $_POST['mobileNo'] ?>" class="form-control" />
                        <?php if (isset($errors['mobileNo'])) : ?>
                         <span class="text-danger"><?= $errors['mobileNo'] ?></span>
                       <?php endif; ?>
@@ -102,7 +102,7 @@
                 <!-- Password input -->
                 <div data-mdb-input-init class="form-outline mb-4">
                   <label class="form-label" for="form3Example4">Password</label>
-                  <input type="password" name="password" id="form3Example4" class="form-control" />
+                  <input type="password" name="password" id="form3Example4" value="<?= $_POST['password'] ?>" class="form-control" />
                    <?php if (isset($errors['password'])) : ?>
                         <span class="text-danger"><?= $errors['password'] ?></span>
                       <?php endif; ?>
