@@ -1,5 +1,8 @@
 <?php
 // echo "controller are working";
+
+
+require './controllers/authControllers/auth.php';
 $config = require('config.php');
 
 $db = new Database($config['database']);
@@ -23,9 +26,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
     $users = $db->query('select * from users')->fetchAll();
 
-session_start();
+// session_start();
 
-$_SESSION['name'] = 'harpreet';
+// $_SESSION['name'] = 'harpreet';
 
 // echo"<pre>";
 // var_dump($users);

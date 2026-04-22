@@ -52,7 +52,7 @@
                                 </form>
                             </div>
                             <div>
-                                <form action="#" method="POST">
+                                <form action="#" method="POST" onsubmit="return confirm('Are you sure you want to remove this user?');">
                                     <input type="hidden" name="id" value="<?= $user['id'] ?>">
                                     <button class="btn btn-danger">Delete</button>
                                 </form>

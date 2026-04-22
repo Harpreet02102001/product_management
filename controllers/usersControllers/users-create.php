@@ -1,4 +1,5 @@
 <?php
+require './controllers/authControllers/auth.php';
 require 'Validator.php';
 $config = require('config.php');
 $db = new Database($config['database']);

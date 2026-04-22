@@ -1,11 +1,12 @@
     <?php
     session_start();
 
-      if(isset($_SESSION['name'])){
+    if (isset($_SESSION['user']['name'])) {    //if session exists than prohabited login page
         header('location: /');
         exit();
-      }  
-  
+        die();
+    }
+
     require 'Validator.php';
     $config = require('config.php');
     $db = new Database($config['database']);

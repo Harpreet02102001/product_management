@@ -16,7 +16,8 @@
 
           <div class="card">
             <div class="card-body py-5 px-md-5">
-              <form action="#" method="POST">
+              <!-- <form action="#" method="POST"> -->
+                <form method="POST" action="#">
                 <!-- 2 column grid layout with text inputs for the first and last names -->
                 <div class="row">
                   <div class="col-md-6 mb-4">

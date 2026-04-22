@@ -1,10 +1,13 @@
 <?php
 
+require './controllers/authControllers/auth.php';
 require 'Validator.php';
 
 // echo "controller are working";
 $config = require('config.php');
 $db = new Database($config['database']);
+
+
 
 // echo "<pre>";
 // var_dump($_POST);
@@ -36,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (! Validator::hsnCode($_POST['hsnCode'], 1, 255)) {
         $error['hsnCode'] = 'Enter Valid HSN Code ';
     }
-   if (! Validator::hsnCode($_POST['shelfLife'], 1, 255)) {
+    if (! Validator::hsnCode($_POST['shelfLife'], 1, 255)) {
         $error['shelfLife'] = 'Enter Valid Shelf Life ';
     }
 
