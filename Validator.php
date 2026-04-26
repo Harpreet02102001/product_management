@@ -18,7 +18,7 @@ class Validator
     // validation for unitMeasure field
     public static function unitMeasure($value, $min = 1, $max = INF)
     {
-        $value = trim($value);
+        $value = trim($value);  
         return strlen($value) >= $min && strlen($value) <= $max;
     }
     // validation for category field
@@ -58,6 +58,7 @@ class Validator
     {
         $value = trim($value);
         return strlen($value) >= $min && strlen($value) <= $max;
+       
     }
     // validation for mail field
     public static function mail($value, $min = 1, $max = INF)

@@ -1,18 +1,15 @@
 <?php require "./views/partials/header.php";  ?>
 <?php require "./views/partials/sidebar.php" ?>
 
-
-
 <h2><?= $_SESSION['email']; ?> </h2>
-
-
-
 <!-- main content ends here -->
 <main>
     <div class="container">
         <div class="d-flex justify-content-between">
             <h2>Users Table</h2>
-            <button class="btn btn-primary m-3"><a class="text-white " href="/new_user">Add New User</a></button>
+            <a href="/new_user" class="btn btn-primary m-3 text-white">
+                Add New User
+            </a>
         </div>
         <table class="table table-bordered">
             <thead>
@@ -37,12 +34,29 @@
                         <td><?= $user['id'] ?></td>
                         <td><?= $user['name'] ?></td>
                         <td><?= $user['mail'] ?></td>
-                        <td><?= $user['role_id'] ?></td>
+                        <!-- <?= $user['role_id'] ?> -->
+                        <td>
+                            <?php
+                            if ($user['role_id'] === 1) : ?>
+                                <span class="badge bg-danger"> Admin</span>
+                            <?php else : ?>
+                                <span class="badge bg-primary">User</span>
+                            <?php endif; ?>
+                        </td>
                         <td><?= $user['loginId'] ?></td>
                         <td><?= $user['mobileNo'] ?></td>
                         <td><?= $user['department'] ?></td>
                         <!-- <td><?= $user['password'] ?></td> -->
-                        <td><?= $user['status'] ?></td>
+                        <!-- <td><?= $user['status'] ?></td> -->
+
+                        <td>
+                            <?php
+                            if ($user['status'] ===  "active") : ?>
+                                <span class="badge bg-primary">Active</span>
+                            <?php else : ?>
+                                <span class="badge bg-danger">Inactive</span>
+                            <?php endif; ?>
+                        </td>
                         <!-- <td><?= $user['created_at'] ?></td> -->
                         <!-- <td><?= $user['updated_at'] ?></td> -->
                         <td class="row">

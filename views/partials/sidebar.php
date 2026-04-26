@@ -183,14 +183,16 @@
                                 Products
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2" href="/users">
-                                <svg class="bi" aria-hidden="true">
-                                    <use xlink:href="#people"></use>
-                                </svg>
-                                Admin / Users
-                            </a>
-                        </li>
+                        <?php if ( $_SESSION['user']['role'] == 1 ?? false) : ?> 
+                            <li class="nav-item">
+                                <a class="nav-link d-flex align-items-center gap-2" href="/users">
+                                    <svg class="bi" aria-hidden="true">
+                                        <use xlink:href="#people"></use>
+                                    </svg>
+                                    Admin / Users
+                                </a>
+                            </li>
+                            <?php endif; ?>
                         <li class="nav-item">
                             <a class="nav-link d-flex align-items-center gap-2" href="#">
                                 <svg class="bi" aria-hidden="true">
@@ -306,3 +308,6 @@
                     <?php endif; ?>
                 </div>
             </div>
+
+
+             

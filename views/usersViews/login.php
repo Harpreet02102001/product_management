@@ -5,7 +5,7 @@ require "./views/partials/header.php";
     <div class="row">
         <div class="card p-4 mt-5 col-lg-6 mx-auto">
             <h2 class="mx-auto">User Login </h2>
-            <form action="#" method="POST">
+            <form action="/login" method="POST">
                 <div class="mb-3 mt-3">
                     <label for="email" class="form-label">Email:</label>
                     <input type="email" class="form-control" name="email" value="<?= $_POST['email']; ?>" placeholder="Enter email" name="email">

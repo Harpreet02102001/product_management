@@ -1,10 +1,10 @@
     <?php
-    session_start();
 
+    session_start();
     if (isset($_SESSION['user']['name'])) {    //if session exists than prohabited login page
         header('location: /');
         exit();
-        die();
+        // die();
     }
 
     require 'Validator.php';
@@ -25,8 +25,6 @@
             $errors['password'] = "Please provide Valid Password!";
         }
 
-
-
         // if (!empty($errors)) {
         //     require "./views/usersViews/login.php";
         //     return;
@@ -44,9 +42,16 @@
                 $_SESSION['user'] = [
                     'id' => $users['id'],
                     'name' => $users['name'],
-                    'email' => $users['email'],
+                    'email' => $users['mail'],
+                    'role' => $users['role_id'],
+                    'status' => $users['status'],
+
                 ];
-                header('location: /');
+                if ($users['role_id'] == 1) {             //in this condition we check user role through role_id   
+                    header('location: /');
+                } else {
+                    header('location: /products');
+                }
                 exit();
             } else {
                 $errors['password'] = 'Invalid password';

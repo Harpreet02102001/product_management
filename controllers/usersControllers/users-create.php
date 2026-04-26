@@ -1,4 +1,5 @@
 <?php
+
 require './controllers/authControllers/auth.php';
 require 'Validator.php';
 $config = require('config.php');
@@ -10,7 +11,7 @@ $db = new Database($config['database']);
 // die();
 // var_dump($error);exit;
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $name       = $_POST['name'];
     $loginId    = $_POST['loginId'];
@@ -98,7 +99,7 @@ $db = new Database($config['database']);
                 'department' => $_POST['department'],
                 'role_id' => $_POST['role'],
                 'password' => password_hash($_POST['password'], PASSWORD_BCRYPT),
-                'status' => $_POST['status'],   
+                'status' => $_POST['status'],
             ]
         );
     }

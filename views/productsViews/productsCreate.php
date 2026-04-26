@@ -17,13 +17,13 @@
           <div class="card">
             <div class="card-body py-5 px-md-5">
               <!-- <form action="#" method="POST"> -->
-                <form method="POST" action="#">
+              <form method="POST" action="#">
                 <!-- 2 column grid layout with text inputs for the first and last names -->
                 <div class="row">
                   <div class="col-md-6 mb-4">
                     <div data-mdb-input-init class="form-outline">
                       <label class="form-label" for="form3Example1">Product code</label>
-                      <input type="text" id="form3Example1" name="productCode" class="form-control"  />
+                      <input type="text" id="form3Example1" name="productCode" class="form-control" />
                       <?php if (isset($error['productCode'])) : ?>
                         <span class="text-danger"><?= $error['productCode'] ?></span>
                       <?php endif; ?>
@@ -35,10 +35,10 @@
                       <input type="text" id="form3Example2" name="productName" class="form-control" />
                       <?php if (isset($error['productName'])) : ?>
                         <span class="text-danger"><?= $error['productName'] ?></span>
-                        <?php endif; ?>
-                      </div>
+                      <?php endif; ?>
                     </div>
                   </div>
+                </div>
                 <!-- </div> -->
                 <!--  -->
                 <div class="row">
@@ -48,16 +48,16 @@
                       <input type="text" id="form3Example1" name="unitMeasure" class="form-control" />
                       <?php if (isset($error['productName'])) : ?>
                         <span class="text-danger"><?= $error['unitMeasure'] ?></span>
-                        <?php endif; ?>
+                      <?php endif; ?>
                     </div>
                   </div>
                   <div class="col-md-6 mb-4">
                     <div data-mdb-input-init class="form-outline">
                       <label class="form-label" for="form3Example2">Category Group</label>
                       <input type="text" id="form3Example2" name="category" class="form-control" />
-                       <?php if (isset($error['productName'])) : ?>
+                      <?php if (isset($error['productName'])) : ?>
                         <span class="text-danger"><?= $error['category'] ?></span>
-                        <?php endif; ?>
+                      <?php endif; ?>
                     </div>
                   </div>
                 </div>
@@ -66,27 +66,27 @@
                 <div data-mdb-input-init class="form-outline mb-4">
                   <label class="form-label" for="form3Example3">Sale Price /MRP</label>
                   <input type="number" id="form3Example3" name="price" class="form-control" />
-                   <?php if (isset($error['productName'])) : ?>
-                        <span class="text-danger"><?= $error['price'] ?></span>
-                        <?php endif; ?>
+                  <?php if (isset($error['productName'])) : ?>
+                    <span class="text-danger"><?= $error['price'] ?></span>
+                  <?php endif; ?>
                 </div>
 
                 <!-- Role for user input -->
                 <div data-mdb-input-init class="form-outline mb-4">
                   <label class="form-label" for="form3Example3">Tax/GST</label>
                   <input type="role" id="form3Example3" name="tax" class="form-control" />
-                   <?php if (isset($error['productName'])) : ?>
-                        <span class="text-danger"><?= $error['tax'] ?></span>
-                        <?php endif; ?>
+                  <?php if (isset($error['productName'])) : ?>
+                    <span class="text-danger"><?= $error['tax'] ?></span>
+                  <?php endif; ?>
                 </div>
 
                 <!-- Password input -->
                 <div data-mdb-input-init class="form-outline mb-4">
                   <label class="form-label" for="form3Example4">HSN Code</label>
                   <input type="number" id="form3Example4" name="hsnCode" class="form-control" />
-                    <?php if (isset($error['productName'])) : ?>
-                        <span class="text-danger"><?= $error['hsnCode'] ?></span>
-                        <?php endif; ?>
+                  <?php if (isset($error['productName'])) : ?>
+                    <span class="text-danger"><?= $error['hsnCode'] ?></span>
+                  <?php endif; ?>
                 </div>
 
                 <!-- confirm Password input -->
@@ -94,11 +94,14 @@
                   <label class="form-label" for="form3Example4">Shelf Life/Expiry Tracking</label>
                   <input type="text" id="form3Example4" name="shelfLife" class="form-control" />
                   <?php if (isset($error['shelfLife'])) : ?>
-                        <span class="text-danger"><?= $error['shelfLife'] ?></span>
-                        <?php endif; ?>
-                </div>  
-
-
+                    <span class="text-danger"><?= $error['shelfLife'] ?></span>
+                  <?php endif; ?>
+                </div>
+                <?php if (! $error['authority'] ?? false): ?>
+                  <div class="alert alert-warning">
+                    <strong>Warning!</strong><?= $error['authority'] ?>
+                  </div>
+                <?php endif;  ?>
                 <!-- Submit button -->
                 <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">
                   Create Product

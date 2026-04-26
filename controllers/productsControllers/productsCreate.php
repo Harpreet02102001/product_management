@@ -15,9 +15,9 @@ $db = new Database($config['database']);
 
 // insert form body and other input fieds into database 
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST'  ||  $_SESSION['role_id'] === 1) {
 
-    $errors = [];
+    $error = [];
     if (! Validator::productCode($_POST['productCode'], 1, 10)) {
         $error['productCode'] = 'Enter Valid Product Code';
     }
@@ -83,5 +83,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // header('location: /products');
     }
+} else {
+    // echo "you are not authorised to create products";
+    // $message = "you are not authorised to create products!";
+    // echo "<script type='text/javascript'>alert('$message');</script>";
+     $error['authority'] = 'you are not authorised to create products';
 }
 require "./views//productsViews/productsCreate.php";

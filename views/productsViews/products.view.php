@@ -6,7 +6,7 @@ require "./views/partials/sidebar.php";
 <div class="container">
     <div class="d-flex justify-content-between">
         <h2>Products Table</h2>
-        <button class="btn btn-primary m-3"><a class="text-white " href="/products/create">Add Products</a></button>
+        <a class="text-white btn btn-primary m-3 " href="/products/create">Add Products</a>
     </div>
     <table class="table table-bordered text-nowrap tecenter">
         <thead>
